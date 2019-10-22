@@ -1,31 +1,55 @@
-<div style="border: 5px solid red ">
+<div style="border: 2.5px solid red ">
     <body>
     <h1 style="color:blue; "> HTML Introduction</h1>
-    <h2> Part 1</h2>
-    <p class="paragraph1"> "Hello there"  </p>
     <p>
+    <img src="dog.jpeg" alt="dog" style = "float: left" >  
+    <img src="bulldog.jpeg" alt="bulldog" style = "float: left">
+    <img src="poodle.jpeg" alt="poodle">
+    </p>
+    <p> Click
+        <button onclick="goldenButton()">here</button>
+        for information on the Golden Retreiver
+
+    </p> 
+    <p> Click
+        <button onclick="bulldogButton()">here</button>
+        for information on the Bulldog
+        
+    </p> 
+    <p> Click
+        <button onclick="poodleButton()">here</button>
+        for information on the Poodle
+        
+    </p> 
+    <h2 class="golden"> Part 1</h2>
+    <p class="paragraph1"> Welcome </p>
+    <p> Use this button to go to google to search up some more dog breeds:
         <a href="https://www.google.com/" title="Go to the search bar"> Search Bar </a>
     </p>
     </body>
-    <img src="dog.jpeg" alt="dog" >  
-    <button onclick="myFunction()">Click here</button> 
+
+    
 </div>
 <style>
 p {
-        color: red; 
+        color:black; 
         font-size: 20px;
 }
 body {    
 background-color:grey;
 }
 .paragraph1{
-    color:blue
+    color:black
+}
+.goldenRetrevier{
+  color: black
+
 }
 img {
   border: 1px solid #ddd;
-  border-radius: 100px;
+  border-radius: 50px;
   padding: 5px;
-  width: 300px;
+  width: 200px;
 }
 a:link {
   color: blue;
@@ -41,8 +65,26 @@ a:active {
 }
 </style>
 <script>
-function myFunction() {
+function goldenButton() {
   var x = document.getElementsByClassName("paragraph1") ;
-  x[0].innerHTML = "Goodbye" ;
+  x[0].innerHTML = "This is a golden retreiver!" ;
+  var y = document.getElementsByClassName("golden") ;
+  y[0].innerHTML = "Golden Retreiver";
+}
+
+function bulldogButton() {
+  var x = document.getElementsByClassName("paragraph1");
+  x[0].innerHTML = "This is a bulldog!";
+  var y = document.getElementsByClassName("golden")
+  y[0].innerHTML = "BullDog"
+
+}
+
+function poodleButton() {
+  var x = document.getElementsByClassName("paragraph1");
+  x[0].innerHTML = "This is a Poodle!";
+  var y = document.getElementsByClassName("golden")
+  y[0].innerHTML = "Poodle"
+
 }
 </script>
