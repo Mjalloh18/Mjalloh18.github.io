@@ -1,3 +1,4 @@
+
 p {
         color:black; 
         font-size: 20px;
@@ -29,4 +30,17 @@ a:hover {
 }
 a:active {
   color: yellow;
+}
+
+#goldenRetrevierImg{    
+}
+#goldenRetrevierInfo{
+}
+#bulldogImg{
+}
+#bulldogInfo{
+}
+#poodleImg{
+}
+#poodleInfo{
 }

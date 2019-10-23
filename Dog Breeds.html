@@ -1,0 +1,126 @@
+<head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="myScript.js"></script>
+    </head>
+    <div style="border: 2.5px solid red ">
+        <body>
+        <h1 style="color:rgb(0, 0, 0); "><u> Dog Breeds</u></h1>
+        <p>
+        <img id="goldenRetrevierImg" src="dog.jpeg" alt="dog" >  
+        <img id="bulldogImg" src="bulldog.jpeg" alt="bulldog" >
+        <img id="poodleImg" src="poodle.jpeg" alt="poodle" >
+        </p>
+        <p id="goldenRetrevierInfo"> Click
+            <button onclick="goldenButton()">here</button>
+            for information on the Golden Retreiver.
+        </p> 
+        <p id="bulldogInfo"> Click
+            <button onclick="bulldogButton()">here</button>
+            for information on the Bulldog.
+        </p> 
+        <p id="poodleInfo"> Click
+            <button onclick="poodleButton()">here</button>
+            for information on the Poodle.
+        </p> 
+        <h2 class="golden"></h2>
+        <p class="paragraph1"></p>
+        <p> Use this button to go to google to search up some more dog breeds:
+            <a href="https://www.google.com/" title="Go to the search bar"> Search Bar </a>
+        </p>
+        </body>
+    </div>
+
+<script>
+function goldenButton() {
+  var x = document.getElementsByClassName("paragraph1") ;
+  x[0].innerHTML = "This is a golden retreiver!" ;
+  var y = document.getElementsByClassName("golden") ;
+  y[0].innerHTML = "Golden Retreiver";
+  $("#bulldogImg").fadeOut();
+  $("#poodleImg").fadeOut();
+  $("#goldenRetrevierImg").fadeIn();
+
+  $("#bulldogInfo").show();
+  $("#poodleInfo").show();
+  $("#goldenRetrevierInfo").hide()
+}
+
+function bulldogButton() {
+  var x = document.getElementsByClassName("paragraph1");
+  x[0].innerHTML = "This is a bulldog!";
+  var y = document.getElementsByClassName("golden");
+  y[0].innerHTML = "BullDog" ;
+  $("#bulldogImg").fadeIn();
+  $("#poodleImg").fadeOut();
+  $("#goldenRetrevierImg").fadeOut();
+
+  $("#bulldogInfo").hide();
+  $("#poodleInfo").show();
+  $("#goldenRetrevierInfo").show()
+
+}
+
+function poodleButton() {
+  var x = document.getElementsByClassName("paragraph1");
+  x[0].innerHTML = "This is a Poodle!";
+  var y = document.getElementsByClassName("golden");
+  y[0].innerHTML = "Poodle";
+  $("#bulldogImg").fadeOut();
+  $("#poodleImg").fadeIn();
+  $("#goldenRetrevierImg").fadeOut();
+
+  $("#bulldogInfo").show();
+  $("#poodleInfo").hide();
+  $("#goldenRetrevierInfo").show()
+}
+</script>
+
+<style>
+p {
+        color:black; 
+        font-size: 20px;
+}
+body {    
+background-color:grey;
+}
+.paragraph1{
+    color:black
+}
+.goldenRetrevier{
+  color: black
+
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  padding: 5px;
+  width: 200px;
+}
+a:link {
+  color: blue;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: yellow;
+}
+
+#goldenRetrevierImg{    
+}
+#goldenRetrevierInfo{
+}
+#bulldogImg{
+}
+#bulldogInfo{
+}
+#poodleImg{
+}
+#poodleInfo{
+}
+
+</style>
