@@ -1,3 +1,9 @@
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
 function goldenButton() {
   var x = document.getElementsByClassName("paragraph1") ;
   x[0].innerHTML = "This is a golden retreiver!" ;
