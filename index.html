@@ -16,49 +16,68 @@
 <p id="history"> This is the history quiz</p>
 
 <label for = "1" class="answers">answer 1</label>
-<input id="1" type="radio" value="0" class="answers">
+<input id="1" type="radio" value="0" class="answers12">
 <p></p>
 <label for = "2" class="answers">answer 2</label>
-<input id="2" type="radio" value="0" class="answers">
+<input id="2" type="radio" value="0" class="answers12">
 <p></p>
 <label for = "3" class="answers">answer 3</label>
-<input id="3" type="radio" value="0" class="answers">
+<input id="3" type="radio" value="0" class="answers12">
 <p></p>
 <label for = "4" class="answers">answer 4</label>
-<input id="4" type="radio" value="0" class="answers">
-
-
-
-
-
+<input id="4" type="radio" value="0" class="answers12">
 </div>
 </body>
-
 <script>
 //function createRadio() {
   //  var x = document.createElement("INPUT");
     //x.setAttribute("type", "radio");
     //document.body.appendChild(x);
-
-
 //}
-
-
 $(document).ready(function(){
     $("#sport").hide();
     $("#art").hide();
     $("#history").hide();
     $("#question").hide();
     $(".answers").hide();
+    $(".answers12").hide();
 
+    function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+    }
 
+  
     $(".sport").click(function(){
         $(".introduction").hide() ;
         $("#sport").show();
         $.get("https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple" , function(data){  
             $("#question").text(data.results[0].question);
             $("#question").show();
+            let x = document.getElementsByClassName("answers");
+            let incorrect_answers = data.results[0].incorrect_answers;
+            let correct_answer = data.results[0].correct_answer;
+            let allAnswers = incorrect_answers.concat(correct_answer);
+            console.log(allAnswers);
+            shuffle(allAnswers)
+            console.log(allAnswers)
+
+            for (i=0; i<4; i++) {
+                x[i].innerHTML = allAnswers[i]
+            }
+
+
+
+
+
             $(".answers").show();
+            $(".answers12").show();
          //   createRadio(), createRadio(), createRadio(), createRadio() ;
         });
     });
