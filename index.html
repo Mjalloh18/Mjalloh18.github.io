@@ -10,9 +10,22 @@
 <button class="introduction art">Art</button>
 <button class="introduction sport">Sports</button>
 <button class="introduction history">History</button>
-<p id=sport> This is the sports Quiz</p>
-<p id=art> This is the art quiz</p>
-<p id=history> This is the history quiz</p>
+<p id="sport"> This is the sports Quiz</p>
+<p id="question"></p>
+<p id="art"> This is the art quiz</p>
+<p id="history"> This is the history quiz</p>
+
+<label for = "1" class="answers">answer 1</label>
+<input id="1" type="radio" value="0" class="answers">
+<p></p>
+<label for = "2" class="answers">answer 2</label>
+<input id="2" type="radio" value="0" class="answers">
+<p></p>
+<label for = "3" class="answers">answer 3</label>
+<input id="3" type="radio" value="0" class="answers">
+<p></p>
+<label for = "4" class="answers">answer 4</label>
+<input id="4" type="radio" value="0" class="answers">
 
 
 
@@ -22,14 +35,32 @@
 </body>
 
 <script>
+//function createRadio() {
+  //  var x = document.createElement("INPUT");
+    //x.setAttribute("type", "radio");
+    //document.body.appendChild(x);
+
+
+//}
+
+
 $(document).ready(function(){
-    $("#sport").hide()
-    $("#art").hide()
-    $("#history").hide()
+    $("#sport").hide();
+    $("#art").hide();
+    $("#history").hide();
+    $("#question").hide();
+    $(".answers").hide();
+
 
     $(".sport").click(function(){
         $(".introduction").hide() ;
         $("#sport").show();
+        $.get("https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple" , function(data){  
+            $("#question").text(data.results[0].question);
+            $("#question").show();
+            $(".answers").show();
+         //   createRadio(), createRadio(), createRadio(), createRadio() ;
+        });
     });
     $(".art").click(function(){
         $(".introduction").hide() ;
@@ -39,8 +70,17 @@ $(document).ready(function(){
         $(".introduction").hide();
         $("#history").show();
     });
+
+ //  $.get("https://opentdb.com/api.php?amount=10&category=21&difficulty=medium" , function(data){
+        //for (i=0, i<10,i++){
+   //         console.log(data);
+     //       $("#question").text(data.results[0].question);
+       //     $("#question").show();
+        // };  
+    });
     
-});
+//});
+
 
 </script>
 
